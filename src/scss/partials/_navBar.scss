@@ -1,0 +1,75 @@
+.header{
+    @include grid-container(10vw auto 10vw, auto);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    .container{
+        grid-column: 2/3;
+        width: 100%;
+
+        @include flex(row, nowrap, space-between, center, $space-64);
+        padding: $space-16 0;
+        
+        #brand{
+            #brandIcon{
+                width: 7rem;
+            }
+        }
+    
+        .header__navbar{
+            @include flex(row, nowrap, space-between, center, 0);
+            width: 100%;
+            .navbar__list{
+                @include flex(row, nowrap, space-between, center, $space-16);
+                list-style: none;
+                .listItem{
+                    .navBtn{
+                        color: $black;
+                        font-size: $font-14;
+                        font-weight: 600;
+                        padding: 0.6rem 1.8rem;
+                        border-radius: 2.5rem;
+                        transition: all .3s;
+                    }
+                    .navBtn:hover{
+                        color: $orange;
+                        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    }
+                }
+                #callToActionBtn{
+                    background-color: $black;
+                    padding: 0.6rem 1.8rem;
+                    border-radius: 2.5rem;
+                    #callToAction{
+                        a{
+                            color: $orange;
+                            padding: 0 $space-6 0;
+                            transition: all .3s;
+                        }
+                        svg{
+                            fill: $orange;
+                            transition: all .3s;
+                        }
+                    }
+                }
+                #callToActionBtn:hover{
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    #callToAction{
+                        a{
+                            color: $white;
+                        }
+                        svg{
+                            fill: $white;
+                        }
+                    }
+                }
+            }
+            .navbar__misc{
+                @include flex(row, nowrap, space-between, center, $space-16);
+                list-style: none;
+                #userWidgetBtn{
+                    padding-top: $space-6;
+                }
+            }
+        }
+    }
+}
+

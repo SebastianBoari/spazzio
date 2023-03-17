@@ -1,0 +1,13 @@
+#userWidget{
+    background-color: rgba(23, 23, 23, 0);
+    border: none;
+    a{
+        color: black;
+    }
+}
+#userWidget:hover{
+    a{
+        transition: all .3s;
+        color: $orange;
+    }
+}

@@ -1,0 +1,42 @@
+// GRIDS
+@mixin grid-container($columns, $rows){
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+@mixin grid-item($column: auto, $row: auto, $column-span: 1, $row-span: 1, $justify-self: start, $align-self: start){
+    grid-column: $column / span $column-span;
+    grid-row: $row / span $row-span;
+    justify-self: $justify-self;
+    align-self: $align-self;
+}
+
+@mixin grid-gap($column-gap, $row-gap){
+    grid-column-gap: $column-gap;
+    grid-row-gap: $row-gap;
+}
+
+// FLEXBOX
+@mixin flex($dir, $wrap, $jc, $ai, $gap){
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $gap;
+}
+@mixin flex-gap($row-gap, $col-gap){
+    display: flex;
+    column-gap: $col-gap;
+    row-gap: $row-gap;
+}
+
+// SIZES
+@mixin sizes($width, $height){
+    width: $width;
+    height: $height;
+}
+@mixin max-sizes($max-width, $max-height){
+    max-width: $max-width;
+    max-height: $max-height;
+}

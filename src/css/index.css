@@ -1,3 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+#callToAction {
+  background-color: rgba(23, 23, 23, 0);
+  border: none;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+#callToAction a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+
+#cartWidget {
+  background-color: rgba(23, 23, 23, 0);
+  border: none;
+}
+#cartWidget a {
+  color: black;
+}
+
+#cartWidget:hover a {
+  transition: all 0.3s;
+  color: rgb(242, 100, 25);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.header .container {
+  grid-column: 2/3;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6.4rem;
+  padding: 1.6rem 0;
+}
+.header .container #brand #brandIcon {
+  width: 7rem;
+}
+.header .container .header__navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+.header .container .header__navbar .navbar__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  list-style: none;
+}
+.header .container .header__navbar .navbar__list .listItem .navBtn {
+  color: rgb(31, 31, 31);
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: 0.6rem 1.8rem;
+  border-radius: 2.5rem;
+  transition: all 0.3s;
+}
+.header .container .header__navbar .navbar__list .listItem .navBtn:hover {
+  color: rgb(242, 100, 25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.header .container .header__navbar .navbar__list #callToActionBtn {
+  background-color: rgb(31, 31, 31);
+  padding: 0.6rem 1.8rem;
+  border-radius: 2.5rem;
+}
+.header .container .header__navbar .navbar__list #callToActionBtn #callToAction a {
+  color: rgb(242, 100, 25);
+  padding: 0 0.6rem 0;
+  transition: all 0.3s;
+}
+.header .container .header__navbar .navbar__list #callToActionBtn #callToAction svg {
+  fill: rgb(242, 100, 25);
+  transition: all 0.3s;
+}
+.header .container .header__navbar .navbar__list #callToActionBtn:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.header .container .header__navbar .navbar__list #callToActionBtn:hover #callToAction a {
+  color: rgb(255, 255, 255);
+}
+.header .container .header__navbar .navbar__list #callToActionBtn:hover #callToAction svg {
+  fill: rgb(255, 255, 255);
+}
+.header .container .header__navbar .navbar__misc {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  list-style: none;
+}
+.header .container .header__navbar .navbar__misc #userWidgetBtn {
+  padding-top: 0.6rem;
+}
+
+#userWidget {
+  background-color: rgba(23, 23, 23, 0);
+  border: none;
+}
+#userWidget a {
+  color: black;
+}
+
+#userWidget:hover a {
+  transition: all 0.3s;
+  color: rgb(242, 100, 25);
+}
 
 /*# sourceMappingURL=index.css.map */
