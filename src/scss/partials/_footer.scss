@@ -1,0 +1,47 @@
+#footer{
+    @include grid-container(10vw auto 10vw, auto);
+    padding: $space-64 0;
+    .footer__container{
+        @include flex(row, nowrap, space-between, center, 0);
+        grid-column: 2/3;
+        width: 100%;
+        background-color: $black;
+        border-radius: 4px;
+        padding: $space-32;
+        .footer__article{
+            @include flex(column, nowrap, space-between, center, $space-128);
+            text-align: center;
+            .article__header{
+                .header__figure{
+                    .figure__img{
+                        width: 24rem;
+                    }
+                }
+                .header__title{
+                    font-size: $font-20;
+                    color: $white;
+                    font-weight: 400;
+                }
+            }
+            .article__rights{
+                color: $white;
+                font-weight: 400;
+                align-self: start;
+            }
+        }
+        .footer__navbar{
+            @include flex(column, nowrap, space-between, end, $space-128);
+            .navbar__socialmedia{
+                @include flex(row, nowrap, space-between, end, $space-16);
+                a{
+                    color: $white;
+                    transition: all .3s;
+                }
+                a:hover{
+                    color: $orange;
+                }
+            }
+        }
+    }
+    
+}

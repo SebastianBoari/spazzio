@@ -1,0 +1,40 @@
+#gallery{
+    @include grid-container(auto auto, auto);
+    height: 100%;
+    column-gap: $space-64;
+    #left{
+        #img-1{
+            max-width: 30rem;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    #right{
+        @include grid-container(auto, auto auto);
+        row-gap: $space-32;
+        #row1{
+            justify-self: end;
+            #img-2{
+                max-width: 48rem;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        #row2{
+            justify-self: end;
+            @include grid-container(auto auto, auto);
+            column-gap: $space-12;
+            #img-3{
+                max-width: 24rem;
+                height: 100%;
+                object-fit: cover;
+            }
+            #img-4{
+                max-width: 23rem;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+}

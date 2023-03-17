@@ -34,6 +34,92 @@ body {
   align-items: center;
   gap: 0;
 }
+#callToAction svg {
+  align-self: end;
+}
+
+#scrollToTop {
+  background-color: rgba(23, 23, 23, 0);
+  border: none;
+  color: rgb(242, 100, 25);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#scrollToTop:hover {
+  background-color: rgba(23, 23, 23, 0);
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  height: 100%;
+  column-gap: 6.4rem;
+}
+#gallery #left #img-1 {
+  max-width: 30rem;
+  height: 100%;
+  object-fit: cover;
+}
+#gallery #right {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  row-gap: 3.2rem;
+}
+#gallery #right #row1 {
+  justify-self: end;
+}
+#gallery #right #row1 #img-2 {
+  max-width: 48rem;
+  height: 100%;
+  object-fit: cover;
+}
+#gallery #right #row2 {
+  justify-self: end;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  column-gap: 1.2rem;
+}
+#gallery #right #row2 #img-3 {
+  max-width: 24rem;
+  height: 100%;
+  object-fit: cover;
+}
+#gallery #right #row2 #img-4 {
+  max-width: 23rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+#categoryBtn {
+  border-radius: 2.5rem;
+  border: solid 2px rgb(31, 31, 31);
+}
+#categoryBtn #categoryButton {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0.6rem 1.8rem;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+#categoryBtn #categoryButton svg {
+  height: 2rem;
+  width: 2rem;
+  align-self: flex-end;
+}
 
 #cartWidget {
   background-color: rgba(23, 23, 23, 0);
@@ -48,7 +134,77 @@ body {
   color: rgb(242, 100, 25);
 }
 
+#footer {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  padding: 6.4rem 0;
+}
+#footer .footer__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  grid-column: 2/3;
+  width: 100%;
+  background-color: rgb(31, 31, 31);
+  border-radius: 4px;
+  padding: 3.2rem;
+}
+#footer .footer__container .footer__article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12.8rem;
+  text-align: center;
+}
+#footer .footer__container .footer__article .article__header .header__figure .figure__img {
+  width: 24rem;
+}
+#footer .footer__container .footer__article .article__header .header__title {
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+#footer .footer__container .footer__article .article__rights {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  align-self: start;
+}
+#footer .footer__container .footer__navbar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12.8rem;
+}
+#footer .footer__container .footer__navbar .navbar__socialmedia {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.6rem;
+}
+#footer .footer__container .footer__navbar .navbar__socialmedia a {
+  color: rgb(255, 255, 255);
+  transition: all 0.3s;
+}
+#footer .footer__container .footer__navbar .navbar__socialmedia a:hover {
+  color: rgb(242, 100, 25);
+}
+
 .header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.9);
   display: grid;
   grid-template-columns: 10vw auto 10vw;
   grid-template-rows: auto;
@@ -99,6 +255,7 @@ body {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .header .container .header__navbar .navbar__list #callToActionBtn {
+  cursor: pointer;
   background-color: rgb(31, 31, 31);
   padding: 0.6rem 1.8rem;
   border-radius: 2.5rem;
@@ -145,6 +302,86 @@ body {
 #userWidget:hover a {
   transition: all 0.3s;
   color: rgb(242, 100, 25);
+}
+
+#home {
+  margin-top: 9rem;
+}
+#home #welcome {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  padding: 6.4rem 0;
+  background-color: rgb(31, 31, 31);
+}
+#home #welcome .welcome__container {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0;
+}
+#home #welcome .welcome__container #welcome__left {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12.8rem;
+  background-color: rgb(242, 100, 25);
+  border-radius: 4px;
+  padding: 3.2rem 6.4rem;
+  max-width: 64rem;
+}
+#home #welcome .welcome__container #welcome__left .left__header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1.6rem;
+}
+#home #welcome .welcome__container #welcome__left .left__header h1 {
+  font-family: "Righteous", sans-serif;
+  font-weight: 600;
+  font-size: 9.6em;
+  color: rgb(255, 255, 255);
+}
+#home #welcome .welcome__container #welcome__left .left__header #line {
+  background-color: rgb(255, 255, 255);
+  height: 0.6rem;
+  width: 20rem;
+}
+#home #welcome .welcome__container #welcome__left .left__header p {
+  color: rgb(255, 255, 255);
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.2em;
+  line-height: 8rem;
+  letter-spacing: 0.1em;
+}
+#home #welcome .welcome__container #welcome__left #callToActionBtn {
+  align-self: end;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.6rem;
+  color: rgb(255, 255, 255);
+  font-size: 2.4em;
+}
+#home #welcome .welcome__container #welcome__left #callToActionBtn #callToAction a {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  font-size: 24px;
+}
+#home #welcome .welcome__container #welcome__left #callToActionBtn #callToAction a svg {
+  height: 3rem;
+  width: 3rem;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -6,4 +6,7 @@
     a{
         @include flex(row, nowrap, space-between, center, 0);
     }
+    svg{
+        align-self: end;
+    }
 }

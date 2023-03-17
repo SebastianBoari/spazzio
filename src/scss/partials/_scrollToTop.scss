@@ -1,0 +1,13 @@
+#scrollToTop{
+    background-color: rgba(23, 23, 23, 0);
+    border: none;
+    color: $orange;
+    cursor: pointer;
+    transition: all .3s;
+}
+#scrollToTop:hover{
+    background-color: rgba(23, 23, 23, 0);
+    border: none;
+    color: $white;
+    cursor: pointer;
+}

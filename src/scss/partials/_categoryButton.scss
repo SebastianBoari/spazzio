@@ -1,0 +1,18 @@
+#categoryBtn{
+    border-radius: 2.5rem;
+    border: solid 2px $black;
+    #categoryButton{
+        cursor: pointer;
+        @include flex(row, nowrap, space-between, center, 0);
+        background-color: rgba(0, 0, 0, 0);
+        padding: 0.6rem 1.8rem;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        svg{
+            height: 2rem;
+            width: 2rem;
+            align-self: flex-end;
+        }
+    }
+}

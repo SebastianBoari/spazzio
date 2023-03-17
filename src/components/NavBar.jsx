@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Brand from './Brand';
 import CallToAction from './CallToAction';
 import CartWidget from './CartWidget';
+import CategoryButton from './CategoryButton';
 import UserWidget from './UserWidget';
 
 
@@ -16,6 +17,9 @@ const NavBar = () => {
 
           <nav className='header__navbar'>
             <ul className='navbar__list'>
+              <li className='listItem' id='categoryBtn'>
+                  <CategoryButton />
+              </li>
               <li className='listItem' id='callToActionBtn'>
                 <CallToAction />
               </li>
