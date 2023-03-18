@@ -12,6 +12,7 @@
     
     .container{
         grid-column: 2/3;
+        max-width: 144rem;
         width: 100%;
 
         @include flex(row, nowrap, space-between, center, $space-64);

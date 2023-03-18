@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-
 const CategoryButton = () => {
   // Inicializo un estado que realice la labor de toggle
   const [showCategories, setShowCategories] = useState(false);
@@ -25,7 +24,6 @@ const CategoryButton = () => {
           document.body.removeEventListener('click', handleClickOutside);
       };
   }, []);
-
 
   return (
     <>

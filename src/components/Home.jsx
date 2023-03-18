@@ -9,7 +9,6 @@ const Home = () => {
 
       <article id='welcome'>
         <div className='welcome__container'>
-
           <div id='welcome__left'>
             <div className='left__header'>
               <h1>Spazzio</h1>
@@ -18,16 +17,9 @@ const Home = () => {
             </div>
             <CallToAction />
           </div>
-
           <Gallery />
         </div>
       </article>
-
-
-
-
-
-
 
     </section>
   );
