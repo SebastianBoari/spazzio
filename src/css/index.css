@@ -25,8 +25,6 @@ body {
   border: none;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-}
-#callToAction a {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -34,8 +32,16 @@ body {
   align-items: center;
   gap: 0;
 }
+#callToAction a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2px;
+}
 #callToAction svg {
-  align-self: end;
+  align-self: center;
 }
 
 #scrollToTop {
@@ -294,10 +300,13 @@ body {
 }
 .header .container .header__navbar .navbar__list #callToActionBtn #callToAction a {
   color: rgb(242, 100, 25);
-  padding: 0 0.6rem 0;
+  padding-left: 0.8rem;
   transition: all 0.3s;
 }
 .header .container .header__navbar .navbar__list #callToActionBtn #callToAction svg {
+  padding-top: 2px;
+  height: 2rem;
+  width: 2rem;
   fill: rgb(242, 100, 25);
   transition: all 0.3s;
 }
@@ -363,7 +372,6 @@ body {
   align-items: start;
   gap: 12.8rem;
   background-color: rgb(242, 100, 25);
-  border-radius: 4px;
   padding: 3.2rem 6.4rem;
   max-width: 64rem;
 }
@@ -378,7 +386,7 @@ body {
 #home #welcome .welcome__container #welcome__left .left__header h1 {
   font-family: "Righteous", sans-serif;
   font-weight: 600;
-  font-size: 9.6em;
+  font-size: 9.4em;
   color: rgb(255, 255, 255);
 }
 #home #welcome .welcome__container #welcome__left .left__header #line {
@@ -395,25 +403,22 @@ body {
   line-height: 8rem;
   letter-spacing: 0.1em;
 }
-#home #welcome .welcome__container #welcome__left #callToActionBtn {
+#home #welcome .welcome__container #welcome__left #callToAction {
   align-self: end;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: start;
-  gap: 0.6rem;
-  color: rgb(255, 255, 255);
-  font-size: 2.4em;
 }
-#home #welcome .welcome__container #welcome__left #callToActionBtn #callToAction a {
+#home #welcome .welcome__container #welcome__left #callToAction a {
   color: rgb(255, 255, 255);
   font-weight: 400;
   font-size: 24px;
+  transition: all 0.3s;
 }
-#home #welcome .welcome__container #welcome__left #callToActionBtn #callToAction a svg {
-  height: 3rem;
-  width: 3rem;
+#home #welcome .welcome__container #welcome__left #callToAction a svg {
+  align-self: end;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+#home #welcome .welcome__container #welcome__left #callToAction:hover a {
+  color: rgb(31, 31, 31);
 }
 
 /*# sourceMappingURL=index.css.map */

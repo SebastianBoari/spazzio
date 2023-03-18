@@ -16,7 +16,7 @@ const Home = () => {
               <div id='line'></div>
               <p>Muebles de oficina, una experiencia premium a un precio increible.</p>
             </div>
-            <div id='callToActionBtn'>Ver<CallToAction /></div>
+            <CallToAction />
           </div>
 
           <Gallery />

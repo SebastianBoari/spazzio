@@ -46,15 +46,18 @@
                 #callToActionBtn{
                     cursor: pointer;
                     background-color: $black;
-                    padding: 0.6rem 1.8rem;
+                    padding: $space-6 $space-18;
                     border-radius: 2.5rem;
                     #callToAction{
                         a{
                             color: $orange;
-                            padding: 0 $space-6 0;
+                            padding-left: $space-8;
                             transition: all .3s;
                         }
                         svg{
+                            padding-top: 2px;
+                            height: $space-20;
+                            width: $space-20;
                             fill: $orange;
                             transition: all .3s;
                         }
