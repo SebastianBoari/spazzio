@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CallToAction from './CallToAction';
 import Gallery from './Gallery';
 
 const Home = () => {
   return (
     <section id='home'>
-
       <article id='welcome'>
         <div className='welcome__container'>
           <div id='welcome__left'>
@@ -20,7 +18,6 @@ const Home = () => {
           <Gallery />
         </div>
       </article>
-
     </section>
   );
 };

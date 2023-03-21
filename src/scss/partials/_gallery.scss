@@ -1,39 +1,57 @@
 #gallery{
-    @include grid-container(auto auto, auto);
-    height: 100%;
-    column-gap: $space-64;
-    #left{
-        #img-1{
-            max-width: 30rem;
-            height: 100%;
-            object-fit: cover;
-        }
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: $space-16;
+    row-gap: $space-8;
+    position: relative;
+    width: 768px;
+    #img1{
+        grid-column: 1/2;
+        grid-row: 1/3;
+
+        max-width: 25.5rem;
+        height: 100%;
+
+        object-fit: cover;
     }
-    #right{
-        @include grid-container(auto, auto auto);
-        row-gap: $space-32;
-        #row1{
-            justify-self: end;
-            #img-2{
-                max-width: 48rem;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-        #row2{
-            justify-self: end;
-            @include grid-container(auto auto, auto);
-            column-gap: $space-12;
-            #img-3{
-                max-width: 24rem;
-                height: 100%;
-                object-fit: cover;
-            }
-            #img-4{
-                max-width: 23rem;
-                height: 100%;
-                object-fit: cover;
-            }
+    #img2{
+        border-radius: 0 60px  0 0;
+        
+        grid-column: 2/4;
+        grid-row: 1/2;
+
+        max-width: 49.6rem;
+        height: 100%;
+
+        object-fit: cover;
+    }
+    #img3{
+        grid-column: 2/3;
+        grid-row: 2/3;
+
+        max-width: 24rem;
+        height: 100%;
+
+        object-fit: cover;
+    }
+    #img4{
+        grid-column: 3/4;
+        grid-row: 2/3;
+
+        max-width: 24rem;
+        height: 100%;
+
+        object-fit: cover;
+    }
+}
+
+
+@media (max-width: 1640px){
+    #gallery{
+
+        #img2{
+            border-radius: 0 0 0 0px;
         }
 
     }

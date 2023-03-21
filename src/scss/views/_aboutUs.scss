@@ -1,0 +1,279 @@
+#aboutUs__spazzio{
+    // layout
+    @include grid-container(10vw auto 10vw, auto);
+    margin-top: $space-90;
+    padding: $space-64 0;
+    // style
+    background-color: $orange;
+    .spazzio__container{
+        // layout
+        @include grid-container(auto auto, auto auto);
+        max-width: 144rem;
+        margin: 0 auto;
+        grid-column: 2/3;
+        row-gap: $space-32;
+        column-gap: $space-32;
+        #spazzio__history{
+            // layout
+            @include flex(column, nowrap, space-between, center, 0);
+            grid-column: 1/2;
+            grid-row: 1/3;
+            max-width: 65.4rem;
+            .history__top{
+                // layout
+                @include grid-container(1fr 1fr, auto);
+                padding: $space-32;
+                padding-bottom: $space-64;
+                column-gap: $space-32;
+                // styles
+                background-color: $black;
+                .top__container{
+                    // layout
+                    @include flex(column, nowrap, space-between, center, 0);
+                    grid-column: 2/3;
+                    grid-row: 1/3;
+                    .history__title{
+                        font-family: 'Poppins', sans-serif;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: $font-32;
+                        color: $white;
+                        text-align: center;
+                    }
+                    .history__bio{
+                        font-family: 'Poppins', sans-serif;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: $font-16;
+                        line-height: $space-24;
+                        color: $white;
+                        text-align: center;
+                    }
+                }
+                .history__figure{
+                    grid-column: 1/2;
+                    grid-row: 1/3;
+                }
+            }
+            .history__quote{
+                // layout
+                display: grid;
+                place-items: center;
+                height: 100%;
+                padding: $space-32;
+                // styles
+                background-color: $white;
+                .quote__txt{
+                    font-family: 'Poppins', sans-serif;
+                    font-style: italic;
+                    font-weight: 300;
+                    font-size: $font-16;
+                    line-height: $space-24;
+                    color: $grey;
+                    text-align: center;
+                }
+            }
+        }
+        #spazzio__workshop{
+            // layout
+            @include flex(row, nowrap, space-between, center, 0);
+            grid-column: 2/3;
+            grid-row: 1/2;
+            .workshop__figure{
+                // layout
+                height: 100%;
+                // styles
+                background-color: $black;
+                .figure__img{
+                    height: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 44.6rem; 
+                    object-fit: cover;
+                }
+            }
+            .workshop__history{
+                // layout
+                display: grid;
+                place-items: center;
+                height: 100%;
+                padding: $space-32;
+                // styles
+                background-color: $white;
+                .history__txt{
+                    font-family: 'Poppins', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: $font-16;
+                    line-height: $space-24;
+                    text-align: center;
+                    color: $grey;
+                }
+            }
+        }
+        #spazzio__bio{
+            // layout
+            @include flex(row, nowrap, space-between, center, 0);
+            grid-column: 2/3;
+            grid-row: 2/3;
+            .bio__history{
+                // layout
+                display: grid;
+                place-items: center;
+                height: 100%;
+                padding: $space-32;
+                // styles
+                background-color: $white;
+                .history__txt{
+                    font-family: 'Poppins', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: $font-16;
+                    line-height: $space-24;
+                    text-align: center;
+                    color: $grey;
+                }
+            }
+            .bio__figure{
+                // layout
+                height: 100%;
+                // styles
+                background-color: $black;
+                .figure__img{
+                    height: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 44.6rem; 
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 1680px){
+    #aboutUs__spazzio{
+        .spazzio__container{
+            // layout
+            row-gap: 0px;
+            column-gap: 0px;
+            @include flex(column, nowrap, start, center, $space-32);
+            #spazzio__history{
+                max-width: 65rem;
+            }
+            #spazzio__workshop{
+                max-width: 65rem;
+                .workshop__figure{
+                    .figure__img{
+                        max-width: 35rem
+                    }
+                }
+            }
+            #spazzio__bio{
+                max-width: 65rem;
+                .bio__figure{
+                    .figure__img{
+                        max-width: 35rem
+                    }
+                }
+            }
+        }
+    }
+}
+#aboutUs__industrial{
+    // layout
+    @include grid-container(10vw auto 10vw, auto);
+    padding: $space-64 0;
+    // styles
+    background-color: $black;
+    .industrial__container{
+        // layout
+        @include grid-container(1fr 1fr, auto);
+        grid-column: 2/3;
+        column-gap: $space-32;
+        max-width: 144rem;
+        margin: 0 auto;
+        .industrial__plant{
+            //layout
+            @include flex(column, norwap, stretch, center, 0);
+            // styles
+            background-color: $white;
+            .plant__text{
+                // layout
+                display: grid;
+                place-items: center;
+                padding: $space-32;
+                // styles
+                background-color: $white;
+                .text__p{
+                    font-family: 'Poppins', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: $font-16;
+                    line-height: $space-24;
+                    text-align: center;
+                    color: $grey;
+                }
+            }
+            .plant__figure{
+                width: 100%;
+                height: 100%;
+                .figure__img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .industrial__design{
+            //layout
+            @include flex(column, norwap, space-between, center, 0);
+            // styles
+            background-color: $white;
+            .design__figure{
+                width: 100%;
+                height: 100%;
+              .figure__img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+              }  
+            }
+            .design__text{
+                // layout
+                display: grid;
+                place-items: center;
+                padding: $space-32;
+                // styles
+                background-color: $white;
+                .text__p{
+                    font-family: 'Poppins', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: $font-16;
+                    line-height: $space-24;
+                    text-align: center;
+                    color: $grey;
+                }
+            }
+        }
+    }
+}
+// responsive
+@media (max-width: 1680px){
+    #aboutUs__industrial{
+        .industrial__container{
+            // layout
+            row-gap: 0px;
+            column-gap: 0px;
+            @include flex(column, nowrap, start, center, $space-32);
+            .industrial__plant{
+                max-width: 65rem;
+            }
+            .industrial__design{
+                max-width: 65rem;
+            }
+        }
+    }
+}

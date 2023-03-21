@@ -1,28 +1,41 @@
 #home{
+    // layout
     margin-top: $space-90;
     #welcome{
+        //layout
         @include grid-container(10vw auto 10vw, auto);
         padding: $space-64 0;
+        // style
         background-color: $black;
         .welcome__container{
+            // layout
+            @include flex(row, wrap, space-between, stretch, 0);
             grid-column: 2/3;
-            @include flex(row, wrap, space-between, start, 0);
+            width: 100%;
+            // sizes
+            max-width: 144rem;
+            margin: 0 auto;
             #welcome__left{
-                @include flex(column, nowrap, space-between, start, $space-128);
-                background-color: $orange;
+                // layout
+                @include flex(column, nowrap, space-between, start, $space-80);
                 padding: $space-32 $space-64;
-                max-width: 64rem;
+                max-width: 54rem;
+                // styles
+                background-color: $orange;
+                border-radius:  0 0 0 60px;
                 .left__header{
+                    // layout
                     @include flex(column, nowrap, space-between, start, $space-16);
                     h1{
+                        // styles
                         font-family: 'Righteous', sans-serif;
                         font-weight: 600;
-                        font-size: $font-94;
+                        font-size: $font-86;
                         color: $white;
                     }
                     #line{
                         background-color: $white;
-                        height: $space-6;
+                        height: 4px;
                         width: 20rem;
                     }
                     p{
@@ -30,9 +43,8 @@
                         font-family: 'Poppins';
                         font-style: normal;
                         font-weight: 400;
-                        font-size: $font-32;
+                        font-size: $font-28;
                         line-height: $space-80;
-                        letter-spacing: 0.1em;
                     }
                 }
                 #callToAction{
@@ -53,6 +65,26 @@
                     a{
                         color: $black;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1640px){
+    #home{
+        #welcome{
+            .welcome__container{
+                // layout
+                @include flex(column, nowrap, space-between, center, $space-16);
+                #welcome__left{
+                    // layout
+                    @include flex(column, nowrap, space-between, start, $space-80);
+                    padding: $space-32 $space-64;
+                    max-width: 76.8rem;
+                    // styles
+                    background-color: $orange;
+                    border-radius:  0 60px 0 0;
                 }
             }
         }

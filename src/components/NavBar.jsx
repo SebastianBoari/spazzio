@@ -22,7 +22,7 @@ const NavBar = () => {
                   <CategoryButton />
               </li>
               <li className='listItem'>
-                <Link className='navBtn'>Sobre Nosotros</Link> 
+                <Link to={"/SobreNosotros"} className='navBtn'>Sobre Nosotros</Link> 
               </li>
               <li className='listItem'>
                 <Link className='navBtn'>Contacto</Link>

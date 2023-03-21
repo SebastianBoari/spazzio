@@ -61,48 +61,48 @@ body {
 
 #gallery {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  height: 100%;
-  column-gap: 6.4rem;
-}
-#gallery #left #img-1 {
-  max-width: 30rem;
-  height: 100%;
-  object-fit: cover;
-}
-#gallery #right {
-  display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto 1fr 1fr;
   grid-template-rows: auto auto;
-  row-gap: 3.2rem;
+  column-gap: 1.6rem;
+  row-gap: 0.8rem;
+  position: relative;
+  width: 768px;
 }
-#gallery #right #row1 {
-  justify-self: end;
-}
-#gallery #right #row1 #img-2 {
-  max-width: 48rem;
+#gallery #img1 {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  max-width: 25.5rem;
   height: 100%;
   object-fit: cover;
 }
-#gallery #right #row2 {
-  justify-self: end;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  column-gap: 1.2rem;
+#gallery #img2 {
+  border-radius: 0 60px 0 0;
+  grid-column: 2/4;
+  grid-row: 1/2;
+  max-width: 49.6rem;
+  height: 100%;
+  object-fit: cover;
 }
-#gallery #right #row2 #img-3 {
+#gallery #img3 {
+  grid-column: 2/3;
+  grid-row: 2/3;
   max-width: 24rem;
   height: 100%;
   object-fit: cover;
 }
-#gallery #right #row2 #img-4 {
-  max-width: 23rem;
+#gallery #img4 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  max-width: 24rem;
   height: 100%;
   object-fit: cover;
 }
 
+@media (max-width: 1640px) {
+  #gallery #img2 {
+    border-radius: 0 0 0 0px;
+  }
+}
 #categoryBtn #categoryButton {
   display: flex;
   flex-direction: row;
@@ -125,6 +125,7 @@ body {
   align-self: end;
 }
 #categoryBtn #categoryButton:hover {
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   color: rgb(242, 100, 25);
 }
@@ -188,9 +189,10 @@ body {
   align-items: center;
   gap: 0;
   grid-column: 2/3;
+  max-width: 144rem;
+  margin: 0 auto;
   width: 100%;
   background-color: rgb(31, 31, 31);
-  border-radius: 4px;
   padding: 3.2rem;
 }
 #footer .footer__container .footer__article {
@@ -292,6 +294,7 @@ body {
   transition: all 0.3s;
 }
 .header .container .header__navbar .navbar__list .listItem .navBtn:hover {
+  background-color: rgb(255, 255, 255);
   color: rgb(242, 100, 25);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -311,7 +314,6 @@ body {
   height: 2rem;
   width: 2rem;
   fill: rgb(242, 100, 25);
-  transition: all 0.3s;
 }
 .header .container .header__navbar .navbar__list #callToActionBtn:hover {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -359,13 +361,16 @@ body {
   background-color: rgb(31, 31, 31);
 }
 #home #welcome .welcome__container {
-  grid-column: 2/3;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: start;
+  align-items: stretch;
   gap: 0;
+  grid-column: 2/3;
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
 }
 #home #welcome .welcome__container #welcome__left {
   display: flex;
@@ -373,10 +378,11 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: start;
-  gap: 12.8rem;
-  background-color: rgb(242, 100, 25);
+  gap: 8rem;
   padding: 3.2rem 6.4rem;
-  max-width: 64rem;
+  max-width: 54rem;
+  background-color: rgb(242, 100, 25);
+  border-radius: 0 0 0 60px;
 }
 #home #welcome .welcome__container #welcome__left .left__header {
   display: flex;
@@ -389,12 +395,12 @@ body {
 #home #welcome .welcome__container #welcome__left .left__header h1 {
   font-family: "Righteous", sans-serif;
   font-weight: 600;
-  font-size: 9.4em;
+  font-size: 8.6em;
   color: rgb(255, 255, 255);
 }
 #home #welcome .welcome__container #welcome__left .left__header #line {
   background-color: rgb(255, 255, 255);
-  height: 0.6rem;
+  height: 4px;
   width: 20rem;
 }
 #home #welcome .welcome__container #welcome__left .left__header p {
@@ -402,9 +408,8 @@ body {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 3.2em;
+  font-size: 2.8em;
   line-height: 8rem;
-  letter-spacing: 0.1em;
 }
 #home #welcome .welcome__container #welcome__left #callToAction {
   align-self: end;
@@ -422,6 +427,317 @@ body {
 }
 #home #welcome .welcome__container #welcome__left #callToAction:hover a {
   color: rgb(31, 31, 31);
+}
+
+@media (max-width: 1640px) {
+  #home #welcome .welcome__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  #home #welcome .welcome__container #welcome__left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 8rem;
+    padding: 3.2rem 6.4rem;
+    max-width: 76.8rem;
+    background-color: rgb(242, 100, 25);
+    border-radius: 0 60px 0 0;
+  }
+}
+#aboutUs__spazzio {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  margin-top: 9rem;
+  padding: 6.4rem 0;
+  background-color: rgb(242, 100, 25);
+}
+#aboutUs__spazzio .spazzio__container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  max-width: 144rem;
+  margin: 0 auto;
+  grid-column: 2/3;
+  row-gap: 3.2rem;
+  column-gap: 3.2rem;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__history {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  grid-column: 1/2;
+  grid-row: 1/3;
+  max-width: 65.4rem;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__history .history__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  padding: 3.2rem;
+  padding-bottom: 6.4rem;
+  column-gap: 3.2rem;
+  background-color: rgb(31, 31, 31);
+}
+#aboutUs__spazzio .spazzio__container #spazzio__history .history__top .top__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__history .history__top .top__container .history__title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.2em;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__history .history__top .top__container .history__bio {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__history .history__top .history__figure {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__history .history__quote {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 3.2rem;
+  background-color: rgb(255, 255, 255);
+}
+#aboutUs__spazzio .spazzio__container #spazzio__history .history__quote .quote__txt {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  color: rgb(72, 74, 71);
+  text-align: center;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__workshop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__workshop .workshop__figure {
+  height: 100%;
+  background-color: rgb(31, 31, 31);
+}
+#aboutUs__spazzio .spazzio__container #spazzio__workshop .workshop__figure .figure__img {
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  max-width: 44.6rem;
+  object-fit: cover;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__workshop .workshop__history {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 3.2rem;
+  background-color: rgb(255, 255, 255);
+}
+#aboutUs__spazzio .spazzio__container #spazzio__workshop .workshop__history .history__txt {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  text-align: center;
+  color: rgb(72, 74, 71);
+}
+#aboutUs__spazzio .spazzio__container #spazzio__bio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+#aboutUs__spazzio .spazzio__container #spazzio__bio .bio__history {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 3.2rem;
+  background-color: rgb(255, 255, 255);
+}
+#aboutUs__spazzio .spazzio__container #spazzio__bio .bio__history .history__txt {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  text-align: center;
+  color: rgb(72, 74, 71);
+}
+#aboutUs__spazzio .spazzio__container #spazzio__bio .bio__figure {
+  height: 100%;
+  background-color: rgb(31, 31, 31);
+}
+#aboutUs__spazzio .spazzio__container #spazzio__bio .bio__figure .figure__img {
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  max-width: 44.6rem;
+  object-fit: cover;
+}
+
+@media (max-width: 1680px) {
+  #aboutUs__spazzio .spazzio__container {
+    row-gap: 0px;
+    column-gap: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    gap: 3.2rem;
+  }
+  #aboutUs__spazzio .spazzio__container #spazzio__history {
+    max-width: 65rem;
+  }
+  #aboutUs__spazzio .spazzio__container #spazzio__workshop {
+    max-width: 65rem;
+  }
+  #aboutUs__spazzio .spazzio__container #spazzio__workshop .workshop__figure .figure__img {
+    max-width: 35rem;
+  }
+  #aboutUs__spazzio .spazzio__container #spazzio__bio {
+    max-width: 65rem;
+  }
+  #aboutUs__spazzio .spazzio__container #spazzio__bio .bio__figure .figure__img {
+    max-width: 35rem;
+  }
+}
+#aboutUs__industrial {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  padding: 6.4rem 0;
+  background-color: rgb(31, 31, 31);
+}
+#aboutUs__industrial .industrial__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column: 2/3;
+  column-gap: 3.2rem;
+  max-width: 144rem;
+  margin: 0 auto;
+}
+#aboutUs__industrial .industrial__container .industrial__plant {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: norwap;
+  justify-content: stretch;
+  align-items: center;
+  gap: 0;
+  background-color: rgb(255, 255, 255);
+}
+#aboutUs__industrial .industrial__container .industrial__plant .plant__text {
+  display: grid;
+  place-items: center;
+  padding: 3.2rem;
+  background-color: rgb(255, 255, 255);
+}
+#aboutUs__industrial .industrial__container .industrial__plant .plant__text .text__p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  text-align: center;
+  color: rgb(72, 74, 71);
+}
+#aboutUs__industrial .industrial__container .industrial__plant .plant__figure {
+  width: 100%;
+  height: 100%;
+}
+#aboutUs__industrial .industrial__container .industrial__plant .plant__figure .figure__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#aboutUs__industrial .industrial__container .industrial__design {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: norwap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  background-color: rgb(255, 255, 255);
+}
+#aboutUs__industrial .industrial__container .industrial__design .design__figure {
+  width: 100%;
+  height: 100%;
+}
+#aboutUs__industrial .industrial__container .industrial__design .design__figure .figure__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#aboutUs__industrial .industrial__container .industrial__design .design__text {
+  display: grid;
+  place-items: center;
+  padding: 3.2rem;
+  background-color: rgb(255, 255, 255);
+}
+#aboutUs__industrial .industrial__container .industrial__design .design__text .text__p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  text-align: center;
+  color: rgb(72, 74, 71);
+}
+
+@media (max-width: 1680px) {
+  #aboutUs__industrial .industrial__container {
+    row-gap: 0px;
+    column-gap: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    gap: 3.2rem;
+  }
+  #aboutUs__industrial .industrial__container .industrial__plant {
+    max-width: 65rem;
+  }
+  #aboutUs__industrial .industrial__container .industrial__design {
+    max-width: 65rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
