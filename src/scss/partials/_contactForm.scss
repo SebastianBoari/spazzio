@@ -1,0 +1,88 @@
+#contactForm{
+    // layout
+    @include grid-container(1fr 1fr, auto);
+    padding: $space-32 0;
+    gap: $space-16;
+    .contactForm__field{
+        // layout
+        @include flex(column, nowrap, start, start, 0);
+        .field__label{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-size: $font-16;
+            line-height: $space-24;
+            color: $grey;
+        }
+        .field__input{
+            // font
+            font-size: $font-16;
+            font-style: normal;
+            font-weight: 300;
+            font-family: 'Poppins', sans-serif;
+            line-height: $space-24;
+            color: $grey;
+            // styles
+            width: 100%;
+            padding: $space-6;
+            border: $grey-op80 solid 1px;
+            border-radius: 4px;
+            transition: all 1s;
+        }
+        .field__input:focus{
+            outline: none;
+        }
+    }
+    #contactForm__field--asunto{
+        grid-column: 1/3;
+    }
+    #contactForm__field--mensaje{
+        grid-column: 1/3;
+    }
+    #contactForm__field--archivo{
+        grid-column: 1/3;
+        padding: $space-6;
+        border: $grey-op80 solid 1px;
+        border-radius: 4px;
+        #field__input--archivo{
+            // Escondo el boton original
+            position: absolute;
+            left: -9999px;
+        }
+        #field__label--archivo{
+            cursor: pointer;
+            @include flex(row, nowrap, start, center, $space-6);
+            padding: $space-16;
+            svg{
+                color: $grey;
+            }
+            p{
+                // font
+                font-size: $font-16;
+                font-style: normal;
+                font-weight: 300;
+                font-family: 'Poppins', sans-serif;
+                line-height: $space-24;
+                color: $grey;
+            }
+        }
+    }
+    #contactForm__submit{
+        cursor: pointer;
+        grid-column: 2/3;
+        justify-self: end;
+        max-width: 12rem;
+        padding: $space-8 $space-16 ;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-size: $font-16;
+        font-weight: 500;
+        color: $white;
+        background-color: $orange;
+        border: none;
+        transition: all .3s;
+    }
+    #contactForm__submit:hover{
+        background-color: $orange-op90;
+    }
+}
