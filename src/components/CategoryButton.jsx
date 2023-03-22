@@ -6,8 +6,6 @@ const CategoryButton = () => {
 
   const toggleCategories = () => {
     setShowCategories(!showCategories);
-    console.log("funciona");
-    console.log(showCategories);
   };
 
   // Event Handle para cerrar el modal cuando se detecte un click

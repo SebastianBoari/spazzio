@@ -1,9 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactFrom = () => {
 
+    // Estados para manejar los datos
+    const [nombre, setNombre] = useState("");
+    const [email, setEmail] = useState("");
+    const [asunto, setAsunto] = useState("");
+    const [mensaje, setMensaje] = useState("");
+
+    // Fucnion validadora de nombre y apellido
+        const validateName = (name) => {
+            const pattern = /^[a-zA-Z]+ [a-zA-Z]+$/;
+            if(pattern.test(name) ){
+                setNombre(name);
+            } else {
+                alert("Ingrese un nombre y apellido válido. Debe ser su nombre completo sin números ni caracteres especiales");
+            }
+        };
+
+        // Funcion validadora de email
+        const validateEmail = (email) => {
+            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(pattern.test(email)){
+                setEmail(email);
+            } else {
+                alert("Ingrese un correo electrónico válido");
+            };
+        };
+
+        // Funcion validadora de Asunto
+        const validateSubject = (subject) => {
+            const pattern = /^[a-zA-Z0-9\s]{10,}$/;
+            if(pattern.test(subject)){
+                setAsunto(subject);
+            } else {
+                alert("Ingrese un asunto válido. Debe tener al menos 10 caracteres");
+            };
+        };
+
+        // Funcion validadora de Mensaje
+        const validateMessage = (message) => {
+            const pattern = /^.{20,}$/;
+            
+            if(pattern.test(message)){
+                setMensaje(message);
+            } else {
+                alert("Ingrese un mensaje válido. Debe tener al menos 20 caracteres")
+            }
+        };
+   
+    // Funcionalidad del formulario
     const handleForm = (e) => {
+        // Quito el comportamiento por defecto
         e.preventDefault();
+        // Funciones validadoras
+        validateName(e.target[0].value);
+        validateEmail(e.target[1].value);
+        validateSubject(e.target[2].value);
+        validateMessage(e.target[3].value);
     };
 
   return (
