@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Loader = () => {
   return (
-    <div>Loading...🔃</div>
-  )
-}
+    <div id='loader__container'>
+      <span id='loader'></span>
+    </div>
+  );
+};
 
-export default Loader
+export default Loader;

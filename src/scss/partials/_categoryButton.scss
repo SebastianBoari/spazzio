@@ -35,15 +35,20 @@
        list-style: none;
        .catPanel__item{
         cursor: pointer;
-        text-align: center;
-        font-size: $font-14;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        color: $white;
         transition: all .3s;
+        text-align: center;
+        a{
+            font-size: $font-12;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            color: $white;
+            transition: all .3s;
+        }
        }
        .catPanel__item:hover{
-        color: $black;
+        a{
+            color: $black;
+        }
        }
     }
 }

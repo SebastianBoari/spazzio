@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { Link } from 'react-router-dom';
 
 const CategoryButton = () => {
   // Estilos
@@ -24,6 +26,20 @@ const CategoryButton = () => {
       };
   }, []);
 
+  // Logica para traer categorias de Firebase
+  const [categories, setCategories] = useState();
+  useEffect(() =>{
+    const db = getFirestore();
+
+    const catCollection = collection(db, "categorias");
+    getDocs(catCollection)
+    .then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => doc.data());
+      setCategories(docs);
+    })
+  }, []);
+  
+
   return (
     <>
         <button id='categoryButton' onClick={() => toggleCategories()} ref={refMenu}>
@@ -33,11 +49,9 @@ const CategoryButton = () => {
         {showCategories && (
         <div id='catPanel'>
           <ul className='catPanel__list'>
-            <li className='catPanel__item'>Categoría 1</li>
-            <li className='catPanel__item'>Categoría 2</li>
-            <li className='catPanel__item'>Categoría 3</li>
-            <li className='catPanel__item'>Categoría 4</li>
-            <li className='catPanel__item'>Categoría 5</li>
+            {categories && categories.map((category) => (
+            <li key={category.id} className='catPanel__item'><Link to={`/category/${category.id}`}>{category.name}</Link></li>
+            ))}
           </ul>
         </div>
       )}

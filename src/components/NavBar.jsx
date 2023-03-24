@@ -22,10 +22,10 @@ const NavBar = () => {
                   <CategoryButton />
               </li>
               <li className='listItem'>
-                <Link to={"/SobreNosotros"} className='navBtn'>Sobre Nosotros</Link> 
+                <Link to={"/sobreNosotros"} className='navBtn'>Sobre Nosotros</Link> 
               </li>
               <li className='listItem'>
-                <Link to={"/Contacto"} className='navBtn'>Contacto</Link>
+                <Link to={"/contacto"} className='navBtn'>Contacto</Link>
               </li>
             </ul>
             <ul className='navbar__misc'>
