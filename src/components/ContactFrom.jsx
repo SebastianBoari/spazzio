@@ -58,6 +58,8 @@ const ContactFrom = () => {
         validateEmail(e.target[1].value);
         validateSubject(e.target[2].value);
         validateMessage(e.target[3].value);
+
+        // Funcionalidad para guardar en Firebase la informacion:
     };
 
   return (
