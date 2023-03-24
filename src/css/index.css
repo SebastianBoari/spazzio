@@ -339,7 +339,107 @@ body {
   color: rgb(242, 100, 25);
 }
 
+.card__container {
+  background-color: rgb(255, 255, 255);
+  padding: 3.2rem;
+  position: relative;
+  cursor: pointer;
+  max-height: 48rem;
+}
+.card__container .card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  max-width: 24rem;
+  height: 100%;
+}
+.card__container .card .card__title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.8em;
+  line-height: 3.2rem;
+  color: rgb(72, 74, 71);
+}
+.card__container .card .card__img {
+  width: 100%;
+  object-fit: cover;
+}
+.card__container .card .card__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  color: rgb(72, 74, 71);
+}
+.card__container .card .card__footer {
+  background-color: rgb(31, 31, 31);
+  align-self: end;
+  min-width: 12rem;
+  text-align: center;
+  padding: 0.8rem;
+}
+.card__container .card .card__footer .price {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  color: rgb(242, 100, 25);
+}
+.card__container .viewDetailModal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(242, 100, 25, 0.9);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card__container .viewDetailModal .viewDetail {
+  background-color: rgb(31, 31, 31);
+  padding: 1.2rem 3.2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 1.6em;
+  transition: all 0.3s;
+}
+.card__container .viewDetailModal .viewDetail:hover {
+  background-color: rgb(72, 74, 71);
+}
+.card__container .viewDetailModal:hover {
+  opacity: 1;
+}
+
+#itemList {
+  grid-column: 2/3;
+  max-width: 144rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  row-gap: 6.4rem;
+  column-gap: 3.2rem;
+  min-height: calc(100vh - 19rem);
+}
+
 #itemListContainer {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  margin-top: 9rem;
+  padding: 6.4rem 0;
   background-color: rgb(31, 31, 31);
 }
 

@@ -1,13 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Item = ( { category, title, subtitle, price, oldPrice, isPopular, img1 } ) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleMouseEnter = () => {
+    setShowModal(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowModal(false);
+  };
+
+
+
   return (
-    <Link>
+    <div className='card__container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className='card'>
-        <h4>{title}</h4>
+        <h1 className='card__title'>{title}</h1>
+        
+        <img className='card__img' src={img1} alt="Imagen de producto" />
+        
+        <p className='card__subtitle'>{subtitle}</p>
+
+        <div className='card__footer'>
+          <p className='price'>${price}</p>
+        </div>
       </div>
-    </Link>
+      {showModal && (
+          <div className='viewDetailModal'>
+            <Link className='viewDetail' to='#'>Ver producto</Link>
+          </div>
+        )}
+    </div>
   );
 };
 

@@ -1,0 +1,11 @@
+#itemList{
+    // layout 
+    grid-column: 2/3;
+    max-width: 144rem;
+    margin: 0 auto;
+    @include grid-container(repeat(4, 1fr), auto);
+    grid-auto-rows: auto;
+    row-gap: $space-64;
+    column-gap: $space-32;
+    min-height: calc(100vh - 19rem);
+}
