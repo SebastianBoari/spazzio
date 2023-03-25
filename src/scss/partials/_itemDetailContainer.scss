@@ -1,0 +1,15 @@
+#itemDetailContainer{
+    // layout
+    @include grid-container(10vw auto 10vw, auto);
+    margin-top: $space-90;
+    padding: $space-90 0 $space-128;
+    min-height: calc(100vh - 9rem);
+    // styles
+    background-color: $black;
+    #loader__container{
+        grid-column: 2/3;
+        display: grid;
+        place-items: center;
+    }
+
+}

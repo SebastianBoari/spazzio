@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Item = ( { category, title, subtitle, price, oldPrice, isPopular, img1 } ) => {
+const Item = ( { id, category, title, subtitle, price, oldPrice, isPopular, img1 } ) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleMouseEnter = () => {
@@ -29,7 +29,7 @@ const Item = ( { category, title, subtitle, price, oldPrice, isPopular, img1 } )
       </div>
       {showModal && (
           <div className='viewDetailModal'>
-            <Link className='viewDetail' to='#'>Ver producto</Link>
+            <Link className='viewDetail' to={`/item/${id}`}>Ver producto</Link>
           </div>
         )}
     </div>

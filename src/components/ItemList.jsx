@@ -7,6 +7,7 @@ const ItemList = ( { products }) => {
         {products.map((product) => {
           return (
             <Item key={product.id} 
+            id={product.id}
             category={product.categoryId}
             title={product.title}
             subtitle={product.subtitle}
