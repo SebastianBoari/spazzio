@@ -415,7 +415,7 @@ body {
   transition: all 0.3s;
 }
 .card__container .viewDetailModal .viewDetail:hover {
-  background-color: rgb(72, 74, 71);
+  background-color: rgba(31, 31, 31, 0.9);
 }
 .card__container .viewDetailModal:hover {
   opacity: 1;
@@ -428,10 +428,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  grid-auto-rows: auto;
   row-gap: 6.4rem;
   column-gap: 3.2rem;
-  min-height: calc(100vh - 19rem);
 }
 
 #itemListContainer {
@@ -440,7 +438,15 @@ body {
   grid-template-rows: auto;
   margin-top: 9rem;
   padding: 6.4rem 0;
+  min-height: 91vh;
   background-color: rgb(31, 31, 31);
+}
+#itemListContainer #loader__container {
+  grid-column: 2/3;
+  max-width: 144rem;
+  display: grid;
+  place-items: center;
+  margin: auto;
 }
 
 .header {
@@ -571,6 +577,37 @@ body {
     transform: rotate(360deg);
   }
 }
+#popularProducts {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  padding: 6.4rem 0 12.8rem;
+  background-color: rgb(255, 164, 0);
+}
+#popularProducts .popularProducts__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.2rem;
+  grid-column: 2/3;
+  max-width: 144rem;
+  margin: 0 auto;
+}
+#popularProducts .popularProducts__container .popularProdcuts__title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 4.2em;
+  line-height: 6.4rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+#popularProducts .popularProducts__container #itemList .card__container .viewDetailModal {
+  background-color: rgba(31, 31, 31, 0.8);
+}
+
 #home {
   margin-top: 9rem;
 }

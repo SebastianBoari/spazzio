@@ -3,6 +3,14 @@
     @include grid-container(10vw auto 10vw, auto);
     margin-top: $space-90;
     padding: $space-64 0;
+    min-height: 91vh;
     // Style
     background-color: $black;
+    #loader__container{
+        grid-column: 2/3;
+        max-width: 144rem;
+        display: grid;
+        place-items: center;
+        margin: auto;
+    }
 }

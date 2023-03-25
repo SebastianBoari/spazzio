@@ -1,6 +1,7 @@
 import React from 'react';
 import CallToAction from './CallToAction';
 import Gallery from './Gallery';
+import PopularProducts from './PopularProducts';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
           <Gallery />
         </div>
       </article>
+      <PopularProducts />
     </section>
   );
 };
