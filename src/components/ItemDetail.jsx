@@ -16,7 +16,7 @@ const ItemDetail = ( { item } ) => {
         </div>
         <div id='content__buttons'>
           <button id='addToCart'>Agregar al carrito</button>
-          <ItemCount />
+          <ItemCount item={item} />
         </div>
       </div>
       <div id='itemDetail__gallery'>

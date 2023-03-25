@@ -1,0 +1,32 @@
+#itemCount{
+    @include flex(row, nowrap, space-between, center, $space-16);
+    height: 100%;
+    min-width: 14rem;
+    background-color: $black;
+    .itemCount__btn{
+        cursor: pointer;
+        text-align: center;
+        background-color: rgba(23, 23, 23, 0);
+        border: none;
+        height: 100%;
+        padding: 0 $space-16;
+        outline: none;
+        color:  $white;
+        font-size: $space-18;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        transition: all .3s;
+    }
+    .itemCount__btn:hover{
+        background-color: $orange;
+        color: $black;
+    }
+    .itemCount__counter{
+        text-align: center;
+        color:  $white;
+        font-size: $space-18;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        min-width: $space-32;
+    }
+}
