@@ -9,7 +9,7 @@
         background-color: $black;
         .welcome__container{
             // layout
-            @include flex(row, wrap, space-between, stretch, 0);
+            @include flex(row, wrap, center, stretch, $space-16);
             grid-column: 2/3;
             width: 100%;
             // sizes
@@ -19,7 +19,7 @@
                 // layout
                 @include flex(column, nowrap, space-between, start, $space-80);
                 padding: $space-32 $space-64;
-                max-width: 54rem;
+                max-width: 58rem;
                 // styles
                 background-color: $orange;
                 border-radius:  0 0 0 60px;
@@ -70,7 +70,6 @@
         }
     }
 }
-
 @media (max-width: 1640px){
     #home{
         #welcome{

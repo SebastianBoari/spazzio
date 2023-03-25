@@ -622,9 +622,9 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: stretch;
-  gap: 0;
+  gap: 1.6rem;
   grid-column: 2/3;
   width: 100%;
   max-width: 144rem;
@@ -638,7 +638,7 @@ body {
   align-items: start;
   gap: 8rem;
   padding: 3.2rem 6.4rem;
-  max-width: 54rem;
+  max-width: 58rem;
   background-color: rgb(242, 100, 25);
   border-radius: 0 0 0 60px;
 }
