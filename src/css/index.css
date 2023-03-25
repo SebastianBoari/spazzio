@@ -447,7 +447,7 @@ body {
   flex-wrap: nowrap;
   justify-content: start;
   align-items: start;
-  gap: 3.2rem;
+  gap: 1.6rem;
 }
 #itemDetail #iitemDetail__content #content__text #title {
   font-family: "Poppins";
@@ -471,11 +471,30 @@ body {
   font-size: 2.4em;
   color: rgb(31, 31, 31);
 }
+#itemDetail #iitemDetail__content #content__text #category {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.2em;
+  color: rgb(31, 31, 31);
+}
 #itemDetail #iitemDetail__content #container__price {
-  align-self: end;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+#itemDetail #iitemDetail__content #container__price #stock {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.8em;
+  color: rgb(31, 31, 31);
 }
 #itemDetail #iitemDetail__content #container__price #price {
-  text-align: end;
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -496,14 +515,16 @@ body {
   border: none;
   outline: none;
   background-color: rgb(242, 100, 25);
+  padding: 0.8rem 2.4rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+#itemDetail #iitemDetail__content #content__buttons #addToCart a {
   color: rgb(255, 255, 255);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.8em;
-  padding: 0.8rem 2.4rem;
-  text-align: center;
-  transition: all 0.3s;
+  font-size: 18px;
 }
 #itemDetail #iitemDetail__content #content__buttons #addToCart:hover {
   background-color: rgba(242, 100, 25, 0.9);
@@ -713,7 +734,7 @@ body {
   color: rgb(255, 255, 255);
   font-size: 1.8rem;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   transition: all 0.3s;
 }
 #itemCount .itemCount__btn:hover {
@@ -777,6 +798,82 @@ body {
 }
 #popularProducts .popularProducts__container #itemList .card__container .viewDetailModal {
   background-color: rgba(31, 31, 31, 0.8);
+}
+
+.cartCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 3.2rem;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+}
+.cartCard .cartCard__img {
+  max-height: 12rem;
+  max-width: 12rem;
+  object-fit: cover;
+}
+.cartCard .cartCard__header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+}
+.cartCard .cartCard__header h2 {
+  font-size: 1.8em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: rgb(31, 31, 31);
+  text-align: center;
+}
+.cartCard .cartCard__header p {
+  font-size: 1.6em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgb(31, 31, 31);
+  max-width: 24rem;
+  text-align: center;
+}
+.cartCard .cartCard__body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+.cartCard .cartCard__body p {
+  font-size: 1.6em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgb(31, 31, 31);
+  max-width: 24rem;
+  text-align: center;
+}
+.cartCard .cartCard__body .subtotal {
+  font-weight: 600;
+}
+.cartCard .cartCard__footer {
+  align-self: start;
+}
+.cartCard .cartCard__footer .quit {
+  cursor: pointer;
+  border: none;
+  background-color: red;
+  color: rgb(255, 255, 255);
+  font-size: 1.6em;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  padding: 0 0.8rem;
+  transition: all 0.3s;
+}
+.cartCard .cartCard__footer .quit:hover {
+  color: rgb(31, 31, 31);
 }
 
 #home {
@@ -1266,6 +1363,181 @@ body {
   line-height: 2.4rem;
   color: rgb(255, 255, 255);
   max-width: 14.4rem;
+}
+
+#cart {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  margin-top: 9rem;
+  padding: 9rem 0 22.4rem;
+  background-color: rgb(31, 31, 31);
+}
+#cart #emptyCart {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+  min-height: 64rem;
+  background-color: rgb(255, 255, 255);
+  padding: 6.4rem;
+  text-align: center;
+  grid-column: 2/3;
+  max-width: 144rem;
+  margin: 0 auto;
+  border-radius: 32px;
+}
+#cart #emptyCart .emptyCart__figure svg {
+  height: 12rem;
+  width: 12rem;
+  color: rgb(31, 31, 31);
+}
+#cart #emptyCart .emptyCart__text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  max-width: 48rem;
+}
+#cart #emptyCart .emptyCart__text h2 {
+  color: rgb(31, 31, 31);
+  font-size: 3.2em;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+#cart #emptyCart .emptyCart__text p {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  color: rgb(31, 31, 31);
+  font-size: 1.8em;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+#cart #emptyCart .emptyCart__text p #callToAction {
+  background-color: rgb(31, 31, 31);
+  padding: 0.8rem 3.2rem;
+  border-radius: 2.5rem;
+  transition: all 0.3s;
+}
+#cart #emptyCart .emptyCart__text p #callToAction a {
+  color: rgb(255, 255, 255);
+  font-size: 1.8em;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s;
+}
+#cart #emptyCart .emptyCart__text p #callToAction:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#cart #emptyCart .emptyCart__text p #callToAction:hover a {
+  color: rgb(242, 100, 25);
+}
+
+#activeCart {
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto;
+  margin-top: 9rem;
+  padding: 6.4rem 0;
+  background-color: rgb(31, 31, 31);
+  min-height: 100vh;
+}
+#activeCart #activeCart__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column: 2/3;
+  max-width: 144rem;
+  margin: 0 auto;
+  column-gap: 3.2rem;
+}
+#activeCart #activeCart__container #cart__sidePanel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 6.4rem 3.2rem;
+  background-color: rgb(255, 255, 255);
+  max-height: 72rem;
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__header img {
+  max-width: 24rem;
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__body .body__price {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__body .body__price p {
+  text-align: center;
+  color: rgb(31, 31, 31);
+  font-size: 1.6em;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__body .body__price h2 {
+  text-align: center;
+  color: rgb(31, 31, 31);
+  font-size: 3.2em;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__body .body__buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__body .body__buttons button {
+  cursor: pointer;
+  background-color: rgb(242, 100, 25);
+  color: rgb(255, 255, 255);
+  font-size: 1.8em;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding: 0.8rem;
+  min-width: 24rem;
+  transition: all 0.3s;
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__body .body__buttons button:hover {
+  background-color: rgba(242, 100, 25, 0.9);
+}
+#activeCart #activeCart__container #cart__sidePanel .sidePanel__body .body__buttons #toKeep a {
+  color: rgb(255, 255, 255);
+}
+#activeCart #activeCart__container .cart__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 1.6rem;
 }
 
 /*# sourceMappingURL=index.css.map */

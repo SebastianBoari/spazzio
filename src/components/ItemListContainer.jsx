@@ -18,7 +18,6 @@ const ItemListContainer = () => {
     .then((snapshot) => {
       const docs = snapshot.docs.map((doc) => doc.data());
       setProducts(docs);
-      console.log(docs);
     })
   }, []);
 

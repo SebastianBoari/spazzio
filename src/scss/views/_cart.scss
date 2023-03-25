@@ -1,0 +1,133 @@
+#cart{
+    @include grid-container(10vw auto 10vw, auto);
+    margin-top: $space-90;
+    padding: $space-90 0 $space-224;
+    background-color: $black;
+    #emptyCart{
+        @include flex(column, nowrap, center, center, $space-32);
+        min-height: 64rem;
+        background-color: $white;
+        padding: $space-64;
+        text-align: center;
+        grid-column: 2/3;
+        max-width: 144rem;
+        margin: 0 auto;
+        border-radius: 32px;
+        .emptyCart__figure{
+            svg{
+                height: 12rem;
+                width: 12rem;
+                color: $black;
+            }
+        }
+        .emptyCart__text{
+            @include flex(column, nowrap, center, center, $space-16);
+            max-width: 48rem;
+            h2{
+                color: $black;
+                font-size: $font-32;
+                font-weight: 400;
+                font-family: 'Poppins', sans-serif;
+            }
+            p{
+                @include flex(column, nowrap, center, center, $space-16);
+                color: $black;
+                font-size: $font-18;
+                font-weight: 400;
+                font-family: 'Poppins', sans-serif;
+                #callToAction{
+                    background-color: $black;
+                    padding: $space-8 $space-32;
+                    border-radius: 2.5rem;
+                    transition: all .3s;
+                    a{
+                        color: $white;
+                        font-size: $font-18;
+                        font-weight: 400;
+                        font-family: 'Poppins', sans-serif;
+                        transition: all .3s;
+                    }
+                }
+                #callToAction:hover{
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    a{
+                        color: $orange;
+                    }
+                }
+            }
+        }
+    }
+}
+#activeCart{
+    @include grid-container(10vw auto 10vw, auto);
+    margin-top: $space-90;
+    padding: $space-64 0;
+    background-color: $black;
+    min-height: 100vh;
+    #activeCart__container{
+        @include grid-container(1fr 1fr, auto);
+        grid-column: 2/3;
+        max-width: 144rem;
+        margin: 0 auto;
+        column-gap: $space-32;
+        #cart__sidePanel{
+            @include flex(column, nowrap, space-between, center, $space-16);
+            padding: $space-64 $space-32;
+            background-color: $white;
+            max-height: 72rem;
+            .sidePanel__header{
+                img{
+                    max-width: 24rem;
+                }
+            }
+            .sidePanel__body{
+                @include flex(column, nowrap, center, center, $space-32);
+                .body__price{
+                    @include flex(column, nowrap, center, center, $space-32);
+                    p{
+                        text-align: center;
+                        color: $black;
+                        font-size: $font-16;
+                        border: none;
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                    }
+                    h2{
+                        text-align: center;
+                        color: $black;
+                        font-size: $font-32;
+                        border: none;
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                    }
+                }
+                .body__buttons{
+                    @include flex(column, nowrap, center, center, $space-16);
+                    button{
+                        cursor: pointer;
+                        background-color: $orange;
+                        color: $white;
+                        font-size: $font-18;
+                        border: none;
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        padding: $space-8;
+                        min-width: 24rem;
+                        transition: all .3s;
+                    }
+                    button:hover{
+                        background-color: $orange-op90;
+                    }
+                    #toKeep{
+                        a{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        .cart__container{
+            @include flex(column, nowrap, start, center, $space-16);
+        }
+    }
+}

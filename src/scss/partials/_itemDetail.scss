@@ -5,8 +5,6 @@
     max-width: 144rem;
     min-height: 64rem;
     margin: 0 auto;
-    // styles
-
     #iitemDetail__content{     
         // layout 
         @include flex(column, nowrap, space-between, start, $space-32);
@@ -15,7 +13,7 @@
         // layout
         background-color: $white;
         #content__text{
-            @include flex(column, nowrap, start, start, $space-32);
+            @include flex(column, nowrap, start, start, $space-16);
             #title{
                 font-family: 'Poppins';
                 font-style: normal;
@@ -36,14 +34,27 @@
                 font-style: normal;
                 font-weight: 300;
                 font-size: $font-24;
-
+                color: $black;
+            }
+            #category{
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 300;
+                font-size: $font-12;
                 color: $black;
             }
         }
         #container__price{
-            align-self: end;
+            @include flex(row, nowrap, space-between, center, 0);
+            width: 100%;
+            #stock{
+                font-family: 'Poppins', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: $font-18;
+                color: $black;
+            }
             #price{
-                text-align: end;
                 font-family: 'Poppins', sans-serif;
                 font-style: normal;
                 font-weight: 300;
@@ -59,14 +70,16 @@
                 border: none;
                 outline: none;
                 background-color: $orange;
-                color: $white;
-                font-family: 'Poppins', sans-serif;
-                font-weight: 400;
-                font-style: normal;
-                font-size: $font-18;
                 padding: $space-8 $space-24;
                 text-align: center;
                 transition: all .3s;
+                a{
+                    color: $white;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 18px;
+                }
             }
             #addToCart:hover{
                 background-color: $orange-op90

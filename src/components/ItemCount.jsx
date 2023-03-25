@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ItemCount = ( { item } ) => {
-  const [counter, setCounter] = useState(0);
-  
+const ItemCount = ( { item, setPrice, counter, setCounter } ) => {
+  // Logica para contar cantidad de producto
   const add = () => {
     if(counter < item.stock){
       setCounter(counter + 1);
-    }
+    };
   };
-
   const sub = () => {
-    if(counter > 0){
-      setCounter(counter - 1)
-    }
+    if(counter > 1){
+      setCounter(counter - 1);
+    };
   };
-
+  // Logica para mostrar el precio actualizado
+  useEffect(()=>{
+    setPrice(counter);
+  }, [counter]);
 
   return (
     <div id='itemCount'>

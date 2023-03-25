@@ -1,0 +1,60 @@
+.cartCard{
+    @include flex(row, nowrap, space-between, center, $space-16);
+    padding: $space-32;
+    background-color: $white;
+    position: relative;
+    .cartCard__img{
+        max-height: 12rem;
+        max-width: 12rem;
+        object-fit: cover;
+    }
+    .cartCard__header{
+        @include flex(column, nowrap, space-between, center, $space-16);
+        h2{
+            font-size: $font-18;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: $black;
+            text-align: center;
+        }
+        p{
+            font-size: $font-16;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: $black;
+            max-width: 24rem;
+            text-align: center;
+        }
+    }
+    .cartCard__body{
+        @include flex(column, nowrap, space-between, center, $space-8);
+        p{
+            font-size: $font-16;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: $black;
+            max-width: 24rem;
+            text-align: center;
+        }
+        .subtotal{
+            font-weight: 600;
+        }
+    }
+    .cartCard__footer{
+        align-self: start;
+        .quit{
+            cursor: pointer;
+            border: none;
+            background-color: red;
+            color: $white;
+            font-size: $font-16;
+            font-weight: 400;
+            font-family: 'Poppins', sans-serif;
+            padding: 0 $space-8;
+            transition: all .3s;
+        }
+        .quit:hover{
+            color: $black;
+        }
+    }
+}

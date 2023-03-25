@@ -7,9 +7,11 @@ import ContactUs from './components/ContactUs';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
+import { CartContextProvider } from './context/CartContext';
 
 function App() {
   return (
+    <CartContextProvider>
     <Browser>
       <Header />
         <Routes>
@@ -23,6 +25,7 @@ function App() {
         </Routes>
       <Footer />
     </Browser>
+    </CartContextProvider>
   );
 };
 
