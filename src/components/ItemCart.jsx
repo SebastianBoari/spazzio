@@ -4,9 +4,7 @@ const ItemCart = ({ id, category, title, subtitle, quantity, stock, price, img1,
     const subTotalCost = () => {
         const currentPrice = price * quantity;
         return currentPrice.toFixed(2);
-    }
-    
-    
+    };
     return (
     <div key={id} className='cartCard'>
         <img className='cartCard__img' src={img1} alt="" />

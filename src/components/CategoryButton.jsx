@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { Link } from 'react-router-dom';
 
-const CategoryButton = () => {
+const CategoryButton = ({ clickToTop }) => {
   // Estilos
   // Inicializo un estado que realice la labor de toggle
   const [showCategories, setShowCategories] = useState(false);
@@ -50,7 +50,7 @@ const CategoryButton = () => {
         <div id='catPanel'>
           <ul className='catPanel__list'>
             {categories && categories.map((category) => (
-            <li key={category.id} className='catPanel__item'><Link to={`/category/${category.id}`}>{category.name}</Link></li>
+            <li key={category.id} className='catPanel__item' onClick={() => clickToTop()}><Link to={`/category/${category.id}`}>{category.name}</Link></li>
             ))}
           </ul>
         </div>

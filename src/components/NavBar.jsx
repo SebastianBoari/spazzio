@@ -7,32 +7,33 @@ import CategoryButton from './CategoryButton';
 import UserWidget from './UserWidget';
 
 
-const NavBar = () => {
+const NavBar = ({ clickToTop }) => {
+
   return (
     <>
       <header className='header'>
         <div className='container'>
-          <Brand />
+          <Brand clickToTop={clickToTop} />
           <nav className='header__navbar'>
             <ul className='navbar__list'>
-              <li className='listItem' id='callToActionBtn'>
+              <li className='listItem' id='callToActionBtn' onClick={() => clickToTop()}>
                 <CallToAction />
               </li>
               <li className='listItem' id='categoryBtn'>
-                  <CategoryButton />
+                  <CategoryButton clickToTop={clickToTop}/>
               </li>
-              <li className='listItem'>
+              <li className='listItem' onClick={() => clickToTop()}>
                 <Link to={"/sobreNosotros"} className='navBtn'>Sobre Nosotros</Link> 
               </li>
-              <li className='listItem'>
+              <li className='listItem' onClick={() => clickToTop()}>
                 <Link to={"/contacto"} className='navBtn'>Contacto</Link>
               </li>
             </ul>
-            <ul className='navbar__misc'>
+            <ul className='navbar__misc' onClick={() => clickToTop()}>
               <li className='listItem' id='userWidgetBtn'>
                 <UserWidget />
               </li>
-              <li className='listItem'>
+              <li className='listItem' onClick={() => clickToTop()}>
                 <CartWidget />
               </li>
             </ul>
