@@ -43,18 +43,17 @@
     .cartCard__footer{
         align-self: start;
         .quit{
-            cursor: pointer;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
             border: none;
-            background-color: red;
-            color: $white;
-            font-size: $font-16;
-            font-weight: 400;
-            font-family: 'Poppins', sans-serif;
-            padding: 0 $space-8;
+            background-color: rgba(23, 23, 23, 0);
+            color: $red;
             transition: all .3s;
+            cursor: pointer;
         }
         .quit:hover{
-            color: $black;
+            color: $red-strong;
         }
     }
 }

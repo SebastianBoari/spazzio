@@ -1,15 +1,11 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
-const ItemCart = ({ id, category, title, subtitle, quantity, stock, price, img1, totalCost, setTotalCost }) => {
+const ItemCart = ({ id, category, title, subtitle, quantity, stock, price, img1  }) => {
     
     const { deleteProductFromCart } = useContext(CartContext);
 
     const subTotalCost = price * quantity;
-    useEffect(() => {
-        setTotalCost(totalCost + subTotalCost);
-    }, []);
-
 
     return (
     <div key={id} className='cartCard'>

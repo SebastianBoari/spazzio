@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CallToAction from './CallToAction';
 import ItemCart from './ItemCart';
 import PopularProducts from './PopularProducts';
@@ -10,7 +10,16 @@ const Cart = () => {
 
   const { cart, clearCart } = useContext(CartContext);
 
+
+  // Precio total actualizado
   const [ totalCost, setTotalCost ] = useState(0);
+  if(cart.length > 0){
+    useEffect(() => {
+      const totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      setTotalCost(totalPrice);
+    }, [cart]);
+  };
+
 
   // Renderizado
   if(cart.length > 0){
@@ -50,8 +59,6 @@ const Cart = () => {
               stock={item.stock}
               price={item.price}
               img1={item.img1}
-              totalCost={totalCost}
-              setTotalCost={setTotalCost}
               />
             );
           })}
