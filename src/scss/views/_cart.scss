@@ -81,6 +81,7 @@
                 }
             }
             .sidePanel__body{
+                position: relative;
                 @include flex(column, nowrap, center, center, $space-32);
                 .body__price{
                     @include flex(column, nowrap, center, center, $space-32);

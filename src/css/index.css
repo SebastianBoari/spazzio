@@ -20,6 +20,94 @@ body {
   margin: 0 auto;
 }
 
+#checkOut {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 3.2rem;
+  height: 68rem;
+  width: 48rem;
+  top: -34rem;
+  background-color: rgb(255, 255, 255);
+}
+#checkOut #checkOut__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 3.2rem;
+  grid-column: 2/3;
+}
+#checkOut #checkOut__form #form__resume {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 1.6rem;
+}
+#checkOut #checkOut__form #form__resume .resuem__figure {
+  display: grid;
+  place-items: center;
+}
+#checkOut #checkOut__form #form__resume .resuem__figure img {
+  max-width: 12rem;
+}
+#checkOut #checkOut__form #form__resume .resume__info h1 {
+  font-size: 2.4em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: rgb(31, 31, 31);
+}
+#checkOut #checkOut__form #form__resume .resume__info p {
+  font-size: 1.8em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: rgb(31, 31, 31);
+}
+#checkOut #checkOut__form .formField {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 0.8rem;
+}
+#checkOut #checkOut__form .formField label {
+  font-size: 1.6em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgb(31, 31, 31);
+}
+#checkOut #checkOut__form .formField input {
+  min-width: 25rem;
+  border: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 0.8rem;
+  font-size: 1.4em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgb(31, 31, 31);
+}
+#checkOut #checkOut__form .formField input:focus {
+  outline: none;
+}
+#checkOut #checkOut__form #submitButton {
+  background-color: rgb(242, 100, 25);
+  color: rgb(255, 255, 255);
+  font-size: 1.8em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  border: none;
+  padding: 0.8rem 3.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#checkOut #checkOut__form #submitButton:hover {
+  background-color: rgb(224, 88, 14);
+}
+
 .Toastify__toast {
   background-color: rgb(242, 100, 25);
   color: rgb(31, 31, 31);
@@ -1515,6 +1603,7 @@ body {
   max-width: 24rem;
 }
 #activeCart #activeCart__container #cart__sidePanel .sidePanel__body {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

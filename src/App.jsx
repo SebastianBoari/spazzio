@@ -10,7 +10,6 @@ import Cart from './components/Cart';
 import { CartContextProvider } from './context/CartContext';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 function App() {
   return (
     <CartContextProvider>

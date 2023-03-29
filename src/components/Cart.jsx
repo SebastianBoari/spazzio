@@ -5,6 +5,7 @@ import PopularProducts from './PopularProducts';
 import { CartContext } from '../context/CartContext';
 import CartIcon from '../assets/icons/logo1-black.png';
 import { Link } from 'react-router-dom';
+import CheckOut from './CheckOut';
 
 const Cart = () => {
 
@@ -20,6 +21,7 @@ const Cart = () => {
     }, [cart]);
   };
 
+  const [ displayCheckOut, setDisplayCheckOut ] = useState(false);
 
   // Renderizado
   if(cart.length > 0){
@@ -39,8 +41,11 @@ const Cart = () => {
             </div>
 
             <div className='body__buttons'>
-              <button id='toBuy'>Finalizar Compra</button>
-              <button id='toKeep'><Link to={"/catalogo"}>Seguir Comprando</Link></button>
+              <button id='toBuy' onClick={() => setDisplayCheckOut(!displayCheckOut)}>Finalizar Compra</button>
+              { displayCheckOut && (
+                <CheckOut cart={cart} totalCost={totalCost}/>
+              )}
+              <Link to={"/catalogo"}><button id='toKeep'>Seguir Comprando</button></Link>
               <button id='toClean' onClick={() => clearCart()}>Limpiar carrito</button>
             </div>
 
