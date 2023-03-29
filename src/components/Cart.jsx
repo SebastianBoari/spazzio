@@ -69,7 +69,6 @@ const Cart = () => {
           })}
         </article>
       </div>
-
     </section>
     );
 
