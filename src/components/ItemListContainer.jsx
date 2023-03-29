@@ -5,25 +5,27 @@ import ItemList from './ItemList';
 import Loader from './Loader';
 
 const ItemListContainer = () => {
+
   const { category } = useParams();
-
   // Logica para traer productos de Firebase
-  const [products, setProducts] = useState();
-
+  const [products, setProducts] = useState([]);
   useEffect(() =>{
     const db = getFirestore();
-
     const itemsCollection = collection(db, "productos");
-    getDocs(itemsCollection)
-    .then((snapshot) => {
-      const docs = snapshot.docs.map((doc) => doc.data());
-      setProducts(docs);
-    })
+    try {
+      getDocs(itemsCollection)
+      .then((snapshot) => {
+        const docs = snapshot.docs.map((doc) => doc.data());
+        setProducts(docs);
+      });
+    } catch(error) {
+      console.error(error);
+      alert("Ups, error al intentar mostrar información. Por favor, vuelva a intentarlo más tarde.");
+    };
   }, []);
 
   // Logica para filtrar productos por categoria
   const [categoryFilter, setCategoryFilter] = useState([]);
-
   // Si productos y category estan definidos se realizo el filtrado
   useEffect(() => {
     if (products && category) {
@@ -35,18 +37,20 @@ const ItemListContainer = () => {
     }
   }, [products, category]);
   
-
+  
+  
+  // Renderizado del componente
   if(products && products.length > 0){
     if(category && categoryFilter.length > 0){
       return (
         <section id='itemListContainer'>
-          <ItemList products={categoryFilter} />
+          <ItemList products={categoryFilter}/>
         </section>
       );
     } else {
       return (
         <section id='itemListContainer'>
-          <ItemList products={products} />
+          <ItemList products={products}/>
         </section>
       );
     };
@@ -57,6 +61,7 @@ const ItemListContainer = () => {
       </section>
     );
   };
+
 };
 
 export default ItemListContainer;

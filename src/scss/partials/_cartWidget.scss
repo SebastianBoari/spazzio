@@ -2,12 +2,30 @@
     background-color: rgba(23, 23, 23, 0);
     border: none;
     a{
+        @include flex(row, nowrap, space-between, center, 0);
         color: black;
+        position: relative;
+        transition: all .3s;
+        span{
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            align-self: start;
+            background-color: $orange;
+            color: $white;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 9px;
+            padding: $space-6 $space-8;
+            transition: all .3s;
+        }
     }
 }
 #cartWidget:hover{
     a{
-        transition: all .3s;
         color: $orange;
+        span{
+            background-color: $black;
+        }
     }
 }

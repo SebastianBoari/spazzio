@@ -1,40 +1,34 @@
-import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
+import React, { useState , useEffect, useContext } from 'react';
+import { toast } from 'react-toastify';
 import ItemCount from './ItemCount';
+import { CartContext } from '../context/CartContext';
+
 
 const ItemDetail = ( { item } ) => {
+  const { cart, setCart, isInCart, addProductToCart, deleteProductFromCart } = useContext(CartContext);
 
-  const { cart, setCart } = useContext(CartContext);
+  // En este componente solo se guarda informacion en el localStorage que luego en CartCointainer se recupera para actualizar la informacion
   const [counter, setCounter] = useState(1);
-
-  // Revisa si ya existe el item dentro del Cart
-  const isInCart = (itemId) => {
-    return cart.find((item) => item.id === itemId) !== undefined;
-  };
-  // Elimina duplicados y une cantidades
-  const removeDuplicates = (cartItems) => {
-    const uniqueItems = [];
-    cartItems.forEach((item) => {
-      const existingItemIndex = uniqueItems.findIndex((i) => i.id === item.id);
-      if (existingItemIndex !== -1) {
-        uniqueItems[existingItemIndex].quantity += item.quantity;
-      } else {
-        uniqueItems.push(item);
-      }
-    });
-    return uniqueItems;
-  };
+  
+  // Logica para mostrar el precio actualizado
+  const [price, setPrice] = useState(0);
+  useEffect(() => {
+      setPrice(item.price * counter);
+  }, [item, counter]);
+  
 
   const addToCart = () => {
-    const newCart = [...cart, {...item, quantity: counter}];
-    setCart(removeDuplicates(newCart));
+    addProductToCart(item, item.id, counter);
+    toast.success('Agregado al carrito', {autoClose: 1000});
   };
 
-  // Logica para mostrar el precio actualizado
-  const [price, setPrice] = useState(1)
-  const currentPrice = item.price * price;
+  const deleteFromCart = () => {
+    deleteProductFromCart(item.id);
+    toast.success('Eliminado del carrito', {autoClose: 1000});
+  };
 
+
+ // Renderizado
   return (
     <article id='itemDetail'>
       <div id='iitemDetail__content'>
@@ -46,17 +40,20 @@ const ItemDetail = ( { item } ) => {
         </div>
         <div id='container__price'>
           <p id='stock'>Stock: {item.stock} unidades</p>
-          <p id='price'>${currentPrice.toFixed(2)}</p>
+          <p id='price'>${price.toFixed(2)}</p>
         </div>
         <div id='content__buttons'>
-          <button id='addToCart' onClick={() => addToCart()}><Link to={"/carrito"}>Agregar al carrito</Link></button>
-          <ItemCount item={item} setPrice={setPrice} counter={counter} setCounter={setCounter} />
+          {/* { onCart? <button className='button' id='instantBuy' disabled><p>Comprar</p></button> : <button className='button' id='instantBuy'><p>Comprar</p></button> } */}
+          { !isInCart(item.id)? <button className='button' id='addToCart' onClick={() => addToCart()}><p>Agregar al carrito</p></button> : <button className='button' id='deleteFromCart' onClick={() => deleteFromCart()}><p>Quitar del carrito</p></button>} 
+          
+
+          <ItemCount item={item} counter={counter} setCounter={setCounter} />
         </div>
       </div>
       <div id='itemDetail__gallery'>
-        <img id='img1' src={item.img1} alt="" />
-        <img id='img2' src={item.img2} alt="" />
-        <img id='img3' src={item.img3} alt="" />
+        <img id='img1' src={item.img1} alt={`Foto del producto ${item.title}`} />
+        <img id='img2' src={item.img2} alt={`Foto del producto ${item.title}`} />
+        <img id='img3' src={item.img3} alt={`Foto del producto ${item.title}`} />
       </div>
     </article>
   );

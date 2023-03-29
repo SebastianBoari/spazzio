@@ -12,8 +12,6 @@ const Item = ( { id, category, title, subtitle, price, oldPrice, isPopular, img1
     setShowModal(false);
   };
 
-
-
   return (
     <div className='card__container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className='card'>

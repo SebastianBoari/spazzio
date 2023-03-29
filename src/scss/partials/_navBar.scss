@@ -28,7 +28,7 @@
                         color: $black;
                         font-size: $font-14;
                         font-weight: 600;
-                        padding: 0.6rem 1.8rem;
+                        padding: $space-6 $space-18;
                         border-radius: 2.5rem;
                         transition: all .3s;
                     }
@@ -41,12 +41,13 @@
                 #callToActionBtn{
                     cursor: pointer;
                     background-color: $black;
-                    padding: $space-6 $space-18;
+                    padding: $space-6 $space-32;
                     border-radius: 2.5rem;
+                    transition: all .3s;
                     #callToAction{
                         a{
-                            color: $orange;
-                            padding-left: $space-8;
+                            font-weight: 500;
+                            color: $white;
                             transition: all .3s;
                         }
                         svg{
@@ -59,14 +60,7 @@
                 }
                 #callToActionBtn:hover{
                     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                    #callToAction{
-                        a{
-                            color: $white;
-                        }
-                        svg{
-                            fill: $white;
-                        }
-                    }
+                    background-color: $black-strong;
                 }
             }
             .navbar__misc{

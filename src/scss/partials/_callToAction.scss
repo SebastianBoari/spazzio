@@ -3,11 +3,6 @@
     border: none;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    @include flex(row, nowrap, space-between, center, 0);
-    a{
-        @include flex(row, nowrap, space-between, center, 2px);
-    }
-    svg{
-        align-self: center;
-    }
+    display: grid;
+    place-items: center;
 }

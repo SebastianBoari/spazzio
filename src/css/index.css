@@ -20,28 +20,29 @@ body {
   margin: 0 auto;
 }
 
+.Toastify__toast {
+  background-color: rgb(242, 100, 25);
+  color: rgb(31, 31, 31);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.Toastify__toast-icon svg {
+  fill: rgb(31, 31, 31);
+}
+
+.Toastify__progress-bar {
+  background-color: rgb(31, 31, 31);
+}
+
 #callToAction {
   background-color: rgba(23, 23, 23, 0);
   border: none;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0;
-}
-#callToAction a {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2px;
-}
-#callToAction svg {
-  align-self: center;
+  display: grid;
+  place-items: center;
 }
 
 #scrollToTop {
@@ -170,12 +171,35 @@ body {
   border: none;
 }
 #cartWidget a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
   color: black;
+  position: relative;
+  transition: all 0.3s;
+}
+#cartWidget a span {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  align-self: start;
+  background-color: rgb(242, 100, 25);
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 9px;
+  padding: 0.6rem 0.8rem;
+  transition: all 0.3s;
 }
 
 #cartWidget:hover a {
-  transition: all 0.3s;
   color: rgb(242, 100, 25);
+}
+#cartWidget:hover a span {
+  background-color: rgb(31, 31, 31);
 }
 
 #contactForm {
@@ -428,6 +452,7 @@ body {
   grid-template-rows: auto;
   max-width: 144rem;
   min-height: 64rem;
+  column-gap: 3.2rem;
   margin: 0 auto;
 }
 #itemDetail #iitemDetail__content {
@@ -510,7 +535,7 @@ body {
   gap: 0;
   width: 100%;
 }
-#itemDetail #iitemDetail__content #content__buttons #addToCart {
+#itemDetail #iitemDetail__content #content__buttons .button {
   cursor: pointer;
   border: none;
   outline: none;
@@ -519,15 +544,35 @@ body {
   text-align: center;
   transition: all 0.3s;
 }
-#itemDetail #iitemDetail__content #content__buttons #addToCart a {
+#itemDetail #iitemDetail__content #content__buttons .button p {
   color: rgb(255, 255, 255);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
 }
+#itemDetail #iitemDetail__content #content__buttons .button:hover {
+  background-color: rgb(224, 88, 14);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#itemDetail #iitemDetail__content #content__buttons .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+#itemDetail #iitemDetail__content #content__buttons #addToCart {
+  background-color: rgb(31, 31, 31);
+}
 #itemDetail #iitemDetail__content #content__buttons #addToCart:hover {
-  background-color: rgba(242, 100, 25, 0.9);
+  background-color: rgb(24, 24, 24);
+}
+#itemDetail #iitemDetail__content #content__buttons #deleteFromCart {
+  background-color: rgb(157, 2, 8);
+}
+#itemDetail #iitemDetail__content #content__buttons #deleteFromCart:hover {
+  background-color: rgb(106, 4, 15);
+}
+#itemDetail #iitemDetail__content #content__buttons #itemCount:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 #itemDetail #itemDetail__gallery {
   display: grid;
@@ -535,8 +580,7 @@ body {
   grid-template-rows: auto auto;
   max-width: 48rem;
   gap: 1.6rem;
-  padding: 3.2rem;
-  background-color: rgb(242, 100, 25);
+  background-color: rgb(31, 31, 31);
 }
 #itemDetail #itemDetail__gallery #img1 {
   grid-column: 1/3;
@@ -544,6 +588,7 @@ body {
   height: 100%;
   max-width: 100%;
   object-fit: cover;
+  transition: all 0.3s;
 }
 #itemDetail #itemDetail__gallery #img2 {
   grid-column: 1/2;
@@ -551,6 +596,7 @@ body {
   height: 100%;
   max-width: 100%;
   object-fit: cover;
+  transition: all 0.3s;
 }
 #itemDetail #itemDetail__gallery #img3 {
   grid-column: 2/3;
@@ -558,6 +604,7 @@ body {
   height: 100%;
   max-width: 100%;
   object-fit: cover;
+  transition: all 0.3s;
 }
 
 #itemDetailContainer {
@@ -663,12 +710,13 @@ body {
 .header .container .header__navbar .navbar__list #callToActionBtn {
   cursor: pointer;
   background-color: rgb(31, 31, 31);
-  padding: 0.6rem 1.8rem;
+  padding: 0.6rem 3.2rem;
   border-radius: 2.5rem;
+  transition: all 0.3s;
 }
 .header .container .header__navbar .navbar__list #callToActionBtn #callToAction a {
-  color: rgb(242, 100, 25);
-  padding-left: 0.8rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
   transition: all 0.3s;
 }
 .header .container .header__navbar .navbar__list #callToActionBtn #callToAction svg {
@@ -679,12 +727,7 @@ body {
 }
 .header .container .header__navbar .navbar__list #callToActionBtn:hover {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.header .container .header__navbar .navbar__list #callToActionBtn:hover #callToAction a {
-  color: rgb(255, 255, 255);
-}
-.header .container .header__navbar .navbar__list #callToActionBtn:hover #callToAction svg {
-  fill: rgb(255, 255, 255);
+  background-color: rgb(24, 24, 24);
 }
 .header .container .header__navbar .navbar__misc {
   display: flex;
@@ -738,8 +781,7 @@ body {
   transition: all 0.3s;
 }
 #itemCount .itemCount__btn:hover {
-  background-color: rgb(242, 100, 25);
-  color: rgb(31, 31, 31);
+  background-color: rgb(24, 24, 24);
 }
 #itemCount .itemCount__counter {
   text-align: center;
