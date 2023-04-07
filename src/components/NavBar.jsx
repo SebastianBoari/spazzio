@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Brand from './Brand';
 import CallToAction from './CallToAction';
 import CartWidget from './CartWidget';
 import CategoryButton from './CategoryButton';
 import UserWidget from './UserWidget';
+import HamburgerMenu from './HamburgerMenu';
 
 
 const NavBar = () => {
 
-  return (
-    <>
+  const [ isDesktop, setIsDesktop ] = useState(false);
+  const [ openMenu, setOpenMenu ] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 992);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+
+
+  const desktopHeader = () => {
+    return (
       <header className='header'>
         <div className='container'>
           <Brand />
@@ -40,6 +58,29 @@ const NavBar = () => {
           </nav>
         </div> 
       </header>
+    );
+  };
+
+  const mobileHeader = () => {
+    return (
+      <header className='header__mobile'>
+        <div className='container'>
+          <div className='header__banner'>
+            <Brand />
+            <HamburgerMenu openMenu={openMenu} setOpenMenu={setOpenMenu}/>
+          </div>
+        </div> 
+        <nav>
+
+          
+        </nav>
+      </header>
+    );
+  };
+
+  return (
+    <>
+      {isDesktop? desktopHeader() : mobileHeader()}
     </>
   );
 };

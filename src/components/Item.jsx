@@ -25,11 +25,9 @@ const Item = ( { id, category, title, subtitle, price, oldPrice, isPopular, img1
           <p className='price'>${price}</p>
         </div>
       </div>
-      {showModal && (
-          <div className='viewDetailModal'>
-            <Link className='viewDetail' to={`/item/${id}`}>Ver producto</Link>
-          </div>
-        )}
+      <div className={`viewDetailModal ${showModal ? 'visible' : 'hidden'}`}>
+        <Link className='viewDetail' to={`/item/${id}`}>Ver producto</Link>
+      </div>
     </div>
   );
 };

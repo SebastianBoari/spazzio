@@ -3,17 +3,18 @@
     margin-top: $space-90;
     #welcome{
         //layout
-        @include grid-container(10vw auto 10vw, auto);
+        @include grid-container(1fr auto 1fr, auto);
         padding: $space-64 0;
         // style
         background-color: $black;
+
+
         .welcome__container{
             // layout
-            @include flex(row, wrap, center, stretch, $space-16);
+            @include flex(row, nowrap, center, stretch, $space-16);
             grid-column: 2/3;
-            width: 100%;
-            // sizes
             max-width: 144rem;
+            width: 100%;
             margin: 0 auto;
             #welcome__left{
                 // layout
@@ -84,6 +85,23 @@
                     // styles
                     background-color: $orange;
                     border-radius:  0 60px 0 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    #home{
+        #welcome{
+            .welcome__container{
+                // layout
+                @include flex(column, nowrap, space-between, center, $space-16);
+                #welcome__left{
+                    // layout
+                    @include flex(column, nowrap, space-between, start, $space-64);
+                    padding: $space-32;
+                    max-width: 100%;
                 }
             }
         }

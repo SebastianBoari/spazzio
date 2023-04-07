@@ -28,3 +28,41 @@
     }
 
 }
+@media (max-width: 1400px){
+    #popularProducts{
+        // layout
+        @include grid-container(10vw auto 10vw, auto);
+        padding: $space-64 0 $space-128;
+        // styles
+        background-color: $yellow;
+        .popularProducts__container{
+            @include flex(column, nowrap, space-between, center, $space-32);
+            grid-column: 2/3;
+            max-width: 144rem;
+            margin: 0 auto;
+            .popularProdcuts__title{
+                font-family: 'Poppins', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: $font-42;
+                line-height: $space-64;
+                color: $white;
+                text-align: center;
+            }
+            // Item List custom styles
+            #itemList{
+                    @include grid-container(repeat(2, 1fr), auto);
+                    column-gap: $space-64;
+                .card__container{
+                    .viewDetailModal{
+                        background-color: $black-op80;
+                    }
+                }
+            }
+        }
+    
+    }
+
+
+
+}
