@@ -12,7 +12,7 @@ const Home = () => {
             <div className='left__header'>
               <h1>Spazzio</h1>
               <div id='line'></div>
-              <p>Muebles de oficina, una experiencia premium a un precio increible.</p>
+              <p>Muebles de oficina, hogar y exterior. Una experiencia premium a un precio increible.</p>
             </div>
             <CallToAction />
           </div>

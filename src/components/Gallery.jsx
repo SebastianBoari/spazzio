@@ -10,12 +10,21 @@ const Gallery = () => {
 
   return (
     <div id='gallery'>
+      <div id='img1__container'>
+        <img id='img1' src={img1} alt="Imagen de muebles & iluminacion Spazzio" />
+      </div>
 
-      <img id='img1' src={img1} alt="Imagen de muebles & iluminacion Spazzio" />
-      <img id='img2' src={img2} alt="Imagen de muebles & iluminacion Spazzio" />
-      <img id='img3' src={img3} alt="Imagen de muebles & iluminacion Spazzio" />
-      <img id='img4' src={img4} alt="Imagen de muebles & iluminacion Spazzio" />
+      <div id='img2__container'>
+        <img id='img2' src={img2} alt="Imagen de muebles & iluminacion Spazzio" />
+      </div>
 
+      <div id='img3__container'>
+        <img id='img3' src={img3} alt="Imagen de muebles & iluminacion Spazzio" />
+      </div>
+
+      <div id='img4__container'>
+        <img id='img4' src={img4} alt="Imagen de muebles & iluminacion Spazzio" />
+      </div>
     </div>
   );
 };

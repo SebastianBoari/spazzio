@@ -28,6 +28,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
   position: relative;
   height: 100%;
 }
@@ -216,41 +217,55 @@ body {
 
 #gallery {
   display: grid;
-  grid-template-columns: auto 1fr 1fr;
+  grid-template-columns: 24rem 24rem 24rem;
   grid-template-rows: auto auto;
-  column-gap: 1.6rem;
-  row-gap: 0.8rem;
+  grid-column-gap: 1.6rem;
+  grid-row-gap: 0.8rem;
   position: relative;
-  width: 100%;
+  width: 76.7rem;
 }
-#gallery #img1 {
+#gallery #img1__container {
   grid-column: 1/2;
   grid-row: 1/3;
-  max-width: 25.5rem;
+  width: 100%;
+  height: 100%;
+}
+#gallery #img1__container #img1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s;
 }
-#gallery #img2 {
-  border-radius: 0 60px 0 0;
+#gallery #img2__container {
   grid-column: 2/4;
   grid-row: 1/2;
-  max-width: 49.6rem;
+  width: 100%;
+  height: 100%;
+}
+#gallery #img2__container #img2 {
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0 60px 0 0;
 }
-#gallery #img3 {
+#gallery #img3__container {
   grid-column: 2/3;
   grid-row: 2/3;
-  max-width: 24rem;
+  width: 100%;
+  height: 100%;
+}
+#gallery #img3__container #img3 {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#gallery #img4 {
+#gallery #img4__container {
   grid-column: 3/4;
   grid-row: 2/3;
-  max-width: 24rem;
+  width: 100%;
+  height: 100%;
+}
+#gallery #img4__container #img4 {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -651,6 +666,7 @@ body {
   color: rgb(255, 255, 255);
 }
 .card__container .viewDetailModal {
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -659,7 +675,7 @@ body {
   background-color: rgba(242, 100, 25, 0.9);
   display: grid;
   place-items: center;
-  animation: growUp 0.2s linear forwards;
+  animation: growUp 0.1s linear forwards;
 }
 .card__container .viewDetailModal .viewDetail {
   background-color: rgb(31, 31, 31);
@@ -1222,16 +1238,14 @@ body {
   background-color: rgb(31, 31, 31);
 }
 #home #welcome .welcome__container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 1.6rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  column-gap: 1.6rem;
   grid-column: 2/3;
+  margin: 0 auto;
   max-width: 144rem;
   width: 100%;
-  margin: 0 auto;
 }
 #home #welcome .welcome__container #welcome__left {
   display: flex;
@@ -1242,6 +1256,7 @@ body {
   gap: 8rem;
   padding: 3.2rem 6.4rem;
   max-width: 58rem;
+  min-height: 56rem;
   background-color: rgb(242, 100, 25);
   border-radius: 0 0 0 60px;
 }
@@ -1270,24 +1285,27 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 2.8em;
-  line-height: 8rem;
+  line-height: 6.4rem;
 }
 #home #welcome .welcome__container #welcome__left #callToAction {
   align-self: end;
+  background-color: rgb(31, 31, 31);
+  border-radius: 2.4rem;
+  padding: 0.8rem 3.2rem;
+  transition: all 0.3s;
 }
 #home #welcome .welcome__container #welcome__left #callToAction a {
   color: rgb(255, 255, 255);
   font-weight: 400;
   font-size: 24px;
-  transition: all 0.3s;
 }
 #home #welcome .welcome__container #welcome__left #callToAction a svg {
   align-self: end;
   height: 3.2rem;
   width: 3.2rem;
 }
-#home #welcome .welcome__container #welcome__left #callToAction:hover a {
-  color: rgb(31, 31, 31);
+#home #welcome .welcome__container #welcome__left #callToAction:hover {
+  background-color: rgb(24, 24, 24);
 }
 
 @media (max-width: 1640px) {
